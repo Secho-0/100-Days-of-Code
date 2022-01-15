@@ -9,29 +9,34 @@ TODO-5: Caesar should take all 3 user inputs
 
 import os
 
+# TODO-Jake: There has to be a way to make this index wrap right? so i can half the alphabet size
 ALPHABET = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 
-def askTextShift():
+def askTextShift():  # originally, this was cause i had found it easiest to ask in both the original encrypt / decrypt
+                     # ended up being used still to simply the main while loop.
     text = input("Type your message:\n").lower().strip()
     shift = int(input("Type the shift number:\n"))
     return text, shift
 
 
-def caesar(text,shiftamt,eORd):
+def caesar(text, shiftamt, eORd):
     message = ''
 
+    # check if you need which direction you need to move from your starting letter
     if eORd == 'd':
         shiftamt *= -1
 
+    #replace letters as needed
     for letter in text:
         pos = ALPHABET.index(letter)
         new_pos = pos + shiftamt
         message += ALPHABET[new_pos]
 
+    #print message and wait for user to see it, clear screen after
     print(f"Your new message is : {message}")
     input("Waiting...")
     os.system("cls")
