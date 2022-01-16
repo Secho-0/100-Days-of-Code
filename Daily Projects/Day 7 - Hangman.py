@@ -7,7 +7,7 @@ TODO  - If the user has entered a letter they've already guessed, print the lett
 import random as r
 import os
 
-import hangman_art as hArt
+import art
 import hangman_words as hWords
 
 word_list = hWords.WORD_LIST
@@ -34,7 +34,7 @@ for l in hangmans_word:
 
 display = updateDisplay()
 
-print(hArt.LOGO)
+print(art.HANGMAN)
 
 while game_on:
     print(display)
@@ -68,7 +68,7 @@ while game_on:
     if "_" not in board:
         print("You Win!")
 
-    print(hArt.STAGES[lives])
+    print(art.STAGES[lives])
     print("-" * 30)
     print("Previous Guesses:")
     gString = ''
