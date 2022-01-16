@@ -1,5 +1,5 @@
-import os
-import art
+import os, art
+
 print("Lets begin the auction!")
 print(art.SILENTAUCTION)
 
