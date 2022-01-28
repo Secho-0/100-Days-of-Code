@@ -40,9 +40,7 @@ resources = {
 }
 
 def report():
-    """ Return a report of the available resources 
-    Arguments: none
-    Return: none, simple print statement
+    """Reports the current resources in the machine
     """
     for resource in resources:
         if resource != "cash" and resource != "coffee":
@@ -52,25 +50,30 @@ def report():
         if resource == "cash":
             print(resource.capitalize() + ":", resources[resource], "dollars")
 
-def check_resources(drink,resource_list):
-        """
-        Check the available ingredients against whats needed for a drink
-        Arguments: 'drink' selected, and 'resources' list 
-        """
-        for ingredient in drink["ingredients"]:
-            if resource_list[ingredient] < drink["ingredients"][ingredient]:
-                print(f"Not enough {ingredient} to make a your drink , please select something else")
-                return False
-        return True 
+def check_resources(drink: dict,resource_list: dict):
+    """Check the resources for the selected drink, against the available resource_list
 
-def process_coins(drink):
+    Args:
+        drink (dict): the drink that the user selected from the menu, contains list of ingredients and cost
+        resource_list (dict): list of the availabe resources in the Machine
+
+    Returns:
+        bool: True if there is resources, otherwise False
     """
-    This coffee machine is strictly coin operated.
-    In Canada, there are two additional coins - a Loonie($1) and Toonie($2) beyond that of the 
-    quarter, dime, nickel and penny (which we have abolished) 
+    for ingredient in drink["ingredients"]:
+        if resource_list[ingredient] < drink["ingredients"][ingredient]:
+            print(f"Not enough {ingredient} to make a your drink , please select something else")
+            return False
+    return True 
 
-    Parameters: 'drink' - the users drink 
+def process_coins(drink: dict):
+    """Take coins from the user and return change
 
+    Args:
+        drink (dict): the drink that the user selected from the menu, contains list of ingredients and cost
+
+    Returns:
+        int: cost of the drink the user requested 
     """
     cost = drink["cost"] 
     coins = {"Nickels": 0, "Dimes": 0, "Quarters": 0, "Loonie": 0, "Toonie": 0}

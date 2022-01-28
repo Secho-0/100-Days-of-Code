@@ -1,5 +1,4 @@
 '''
-
 Day 1 - Final Project
 --- BAND NAME GENERATOR ---
 Goals:

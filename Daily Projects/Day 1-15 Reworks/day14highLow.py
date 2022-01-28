@@ -4,13 +4,6 @@ from os import system
 import random as r
 import highlowdata as hld
 
-# Print Logo
-# Get 1 Account
-# VS Logo
-# Get 2nd Account
-# Get Input from user
-# check if user is correct 
-
 def get_account(acc_list):
     """ Choose an acccount from within the game data to use for comparison """
     chosen_one =  r.choice(acc_list)
