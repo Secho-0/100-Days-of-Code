@@ -8,31 +8,8 @@ Rock Paper Scissors
 '''
 
 import random as r
+from art import ROCK, PAPER, SCISSORS 
 
-rock = '''
-    _______
----'   ____)
-      (_____)
-      (_____)
-      (____)
----.__(___)
-'''
-paper = '''
-    _______
----'   ____)____
-          ______)
-          _______)
-         _______)
----.__________)
-'''
-scissors = '''
-    _______
----'   ____)____
-          ______)
-       __________)
-      (____)
----.__(___)
-'''
 fuckaround = 0
 print("Welcome!~ Lets get started ")
 
@@ -77,7 +54,7 @@ while True:
     else:
         player_choice = 2
 
-    plays = [rock, paper, scissors]
+    plays = [ROCK, PAPER, SCISSORS]
     choices = [plays[player_choice], plays[computer_choice]]
 
     print(f"Player chose:\n {choices[0]}")
