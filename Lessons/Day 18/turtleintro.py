@@ -6,7 +6,7 @@ import random as r
 timmy = t.Turtle()
 timmy.shape("turtle")
 timmy.color("cyan2")
-timmy.pensize(4)
+timmy.pensize(30)
 timmy.speed(0)
 t.colormode(255)
 
@@ -53,6 +53,7 @@ def get_color():
     blue = r.choice(range(0,256))
     color_code = (red,green,blue)
     return color_code
+    
 # for i in range(1001):
 #     timmy.color(get_color())
 #     timmy.forward(50)
