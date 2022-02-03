@@ -42,6 +42,8 @@ def checkInput(userInput,userop):
         return True
     else:
         return False
+
+
 opnum = 1
 newcalc = 'y'
 
@@ -52,6 +54,7 @@ menu = {
     "/": div,
 }
 print(art.CALCULATOR)
+
 while newcalc.startswith('y'):
 
     # Gather the two numbers the user would like to operate on if first operation in a series

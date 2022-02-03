@@ -1,5 +1,3 @@
-from multiprocessing import RLock
-
 
 ROCK = '''
     _______
