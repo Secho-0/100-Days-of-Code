@@ -1,6 +1,7 @@
 ###This code will not work in repl.it as there is no access to the colorgram package here.###
 ##We talk about this in the video tutorials##
 import colorgram
+import math as m
 import turtle as t
 import random as r
 
@@ -15,23 +16,22 @@ def get_color():
     Returns:
         tuple: red green and blue values to be used by the Turtle
     """
-    
-    red = r.choice(rgb_colors)[0]
-    green = r.choice(rgb_colors)[1]
-    blue = r.choice(rgb_colors)[2]
+    choice = r.choice(rgb_colors)
+    red = choice[0]
+    green = choice[1]
+    blue = choice[2]
     color_code = (red,green,blue)
 
     return color_code
 
-def horiz_dots():
+def horiz_dots(num_columns):
     """Draw dots horizontally across the screen
     """
-    for i in range(0,13):
-        timmy.pencolor(get_color())
+    for i in range(0,int(num_columnsxx)):
         timmy.pendown()
-        timmy.forward(1)
+        timmy.dot(50,get_color())
         timmy.penup()
-        timmy.forward(99)
+        timmy.forward(100)
 
 def go_down():
     """Go down while offscreen
@@ -67,21 +67,24 @@ def set_turtle():
     timmy = t.Turtle()
     timmy.shape('triangle')
     timmy.color((0,255,255))
-    timmy.pencolor(get_color())
-    timmy.pensize(50)
     timmy.penup()
+    timmy.speed('fastest')
     timmy.setx(-600)
     timmy.sety(500)
     return timmy
 
-
+# Setup screen and timmy
 screen = set_screen()
 timmy = set_turtle()
 
-for i in range(0,13):
-    horiz_dots()
+# Ask user for number of rows they'd like to have 
+num_rows = int(m.floor(float(input("How many rows of dots would you like there to be?"))))
+num_columns = int(m.floor(float(input("How many columns of dots would you like there to be? "))))
+
+for i in range(0,int(num_rows/2)):
+    horiz_dots(num_columns)
     go_down()
-    horiz_dots()
+    horiz_dots(num_columns)
     go_down()
 
 screen.exitonclick()
