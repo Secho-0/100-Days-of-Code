@@ -25,5 +25,5 @@ tip_split = round(tip_amount / diners,2)
 
 bill_tip_split = round(bill_total * (1+tip_percent)/ diners, 2)
 
-print(f"For a bill of {bill_total} , each of the {diners} diners will pay ${bill_tip_split}.")
+print(f"For a bill of {bill_total+tip_amount} , each of the {diners} diners will pay ${bill_tip_split}.")
 print(f"This ends up being:\n ${bill_split} for food, and ${tip_split} for tip.")

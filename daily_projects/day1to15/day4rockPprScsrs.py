@@ -8,31 +8,10 @@ Rock Paper Scissors
 '''
 
 import random as r
+from art import ROCK as rock
+from art import PAPER as paper
+from art import SCISSORS as scissors
 
-rock = '''
-    _______
----'   ____)
-      (_____)
-      (_____)
-      (____)
----.__(___)
-'''
-paper = '''
-    _______
----'   ____)____
-          ______)
-          _______)
-         _______)
----.__________)
-'''
-scissors = '''
-    _______
----'   ____)____
-          ______)
-       __________)
-      (____)
----.__(___)
-'''
 fuckaround = 0
 print("Welcome!~ Lets get started ")
 

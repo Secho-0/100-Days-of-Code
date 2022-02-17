@@ -1,6 +1,6 @@
 from os import system
 from math import floor
-import art
+from art import CALCULATOR
 
 def add(a,b):
     sum = a + b
@@ -51,7 +51,7 @@ menu = {
     "*": mult,
     "/": div,
 }
-print(art.CALCULATOR)
+print(CALCULATOR)
 while newcalc.startswith('y'):
 
     # Gather the two numbers the user would like to operate on if first operation in a series
