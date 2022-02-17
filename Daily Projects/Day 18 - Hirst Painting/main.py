@@ -27,7 +27,7 @@ def get_color():
 def horiz_dots(num_columns):
     """Draw dots horizontally across the screen
     """
-    for i in range(0,int(num_columnsxx)):
+    for i in range(0,int(num_columns)):
         timmy.pendown()
         timmy.dot(50,get_color())
         timmy.penup()
